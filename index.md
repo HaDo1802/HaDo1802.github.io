@@ -26,17 +26,17 @@ title: "Home"
          class="profile-pic">
 
     <div class="about-text">
-      <h1>Hello World! I'm Michael Shoemaker</h1>
-      <p>Senior Data Analyst | Teacher | Content Creator | .5x Programmer</p>
+      <h1>Hello World! I'm Ha Do</h1>
+      <p>Associate Data Analyst @ AllegiantAir </p>
       <p>I build practical, production-like data engineering systems — orchestration, storage, transformations, serving, and observability — then explain the decisions behind them.</p>
-      <p><strong>Core skills:</strong> Python · SQL · Linux · Airflow · Spark · BigQuery · Docker · GCP</p>
+      <p><strong>Core skills:</strong> Python · SQL · Linux · Airflow · Docker · S3</p>
 
       <p class="social-links">
-        <a href="https://www.linkedin.com/in/michaelshoemaker1" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/ha-van-do/" target="_blank" aria-label="LinkedIn">
           <i class="fa-brands fa-linkedin"></i>
         </a>
-        <a href="https://www.youtube.com/@dataslinger6379" target="_blank" aria-label="YouTube">
-          <i class="fa-brands fa-youtube"></i>
+        <a href="https://github.com/HaDo1802" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
         </a>
       </p>
     </div>

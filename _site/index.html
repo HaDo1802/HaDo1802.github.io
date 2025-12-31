@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ha Do — Data Analyst </title>
+<meta name="description" content="Production-like data engineering builds, explained clearly.">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link href="https://use.fontawesome.com/releases/v6.5.1/css/all.css?v=2" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <!-- <a class="brand" href="#about">MS</a> -->
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#videos">Videos</a>
+          <a href="#articles">Articles</a>
+        </nav>
+      </div>
+    </header>
+    <main class="content">
+      <!-- Inline carousel-only styles (kept here so they don't clash with grid) -->
+<style>
+  .carousel { position: relative; overflow: hidden; }
+  .carousel-track {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;        /* keep in one row */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: .25rem;
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none;    /* Firefox */
+  }
+  .carousel-track::-webkit-scrollbar { display: none; } /* WebKit */
+  .carousel .card { flex: 0 0 300px; } /* slide width */
+</style>
+
+<section id="about" class="section">
+  <div class="about-container">
+    <img src="/assets/images/me.jpeg" alt="Michael Shoemaker" class="profile-pic" />
+
+    <div class="about-text">
+      <h1>Hello World! I'm Ha Do</h1>
+      <p>Associate Data Analyst @ AllegiantAir </p>
+      <p>I build practical, production-like data engineering systems — orchestration, storage, transformations, serving, and observability — then explain the decisions behind them.</p>
+      <p><strong>Core skills:</strong> Python · SQL · Linux · Airflow · Docker · S3</p>
+
+      <p class="social-links">
+        <a href="https://www.linkedin.com/in/ha-van-do/" target="_blank" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/HaDo1802" target="_blank" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:havando1802@gmail.com" target="_blank" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== Quote Section ===================== -->
+<style>
+  .quote-section {
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.08) 0%, rgba(96, 165, 250, 0.04) 100%);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .quote-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 1rem;
+    font-style: italic;
+    line-height: 1.8;
+    letter-spacing: -0.5px;
+  }
+
+  .quote-author {
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 768px) {
+    .quote-section {
+      padding: 2rem 1.5rem;
+    }
+
+    .quote-text {
+      font-size: 1.3rem;
+    }
+  }
+</style>
+
+<section class="quote-section">
+  <p class="quote-text">"The goal is not to read a book, the goal is to become a reader."</p>
+  <p class="quote-author">— James Clear</p>
+</section>
+
+<!-- ===================== Experience ===================== -->
+<style>
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--accent), transparent);
+  }
+
+  .timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 0;
+    margin-right: 52%;
+    text-align: right;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 52%;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border: 3px solid var(--bg);
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  .timeline-content {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .timeline-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-image-link {
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .timeline-image-link:hover {
+    transform: scale(1.02);
+  }
+
+  .timeline-image-link:hover .timeline-image {
+    box-shadow: 0 8px 20px rgba(96, 165, 250, 0.3);
+  }
+
+  .timeline-company {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin: 0 0 0.25rem;
+  }
+
+  .timeline-position {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.35rem;
+  }
+
+  .timeline-dates {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0 0 0.8rem;
+  }
+
+  .timeline-description {
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0 0 0.8rem;
+  }
+
+  .timeline-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .timeline-skill {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 10px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-left: 40px;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    .timeline-marker {
+      left: 10px;
+    }
+  }
+</style>
+
+<section id="experience" class="section">
+  <div class="section-header">
+    <h2>💼 Experience</h2>
+  </div>
+  
+  <div class="timeline">
+    
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        
+        <a href="https://www.allegiantair.com" target="_blank" rel="noopener" class="timeline-image-link" aria-label="Visit Allegiant Air website">
+          <img src="/assets/images/experience/SWA-LEAD-001-scaled.jpg" alt="Allegiant Air" class="timeline-image" />
+        </a>
+        
+        <h3 class="timeline-company">Allegiant Air</h3>
+        <h4 class="timeline-position">Associate Data Analyst</h4>
+        <p class="timeline-dates">2024 – Present</p>
+        <p class="timeline-description">Building data analytics solutions and dashboards to support operational decisions across the airline.</p>
+        
+        <div class="timeline-skills">
+          
+          <span class="timeline-skill">Python</span>
+          
+          <span class="timeline-skill">SQL</span>
+          
+          <span class="timeline-skill">Data Analysis</span>
+          
+          <span class="timeline-skill">Dashboard Development</span>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        
+        <a href="https://www.southwest.com" target="_blank" rel="noopener" class="timeline-image-link" aria-label="Visit Southwest Airlines website">
+          <img src="/assets/images/experience/TKNTQ77S3JHFRHS3K52GY7W6JA.jpeg" alt="Southwest Airlines" class="timeline-image" />
+        </a>
+        
+        <h3 class="timeline-company">Southwest Airlines</h3>
+        <h4 class="timeline-position">Data Engineering Intern</h4>
+        <p class="timeline-dates">2023 – 2024</p>
+        <p class="timeline-description">Developed ETL pipelines and data infrastructure using Apache Airflow, Docker, and cloud technologies to support analytics operations.</p>
+        
+        <div class="timeline-skills">
+          
+          <span class="timeline-skill">Airflow</span>
+          
+          <span class="timeline-skill">Docker</span>
+          
+          <span class="timeline-skill">Python</span>
+          
+          <span class="timeline-skill">SQL</span>
+          
+          <span class="timeline-skill">AWS</span>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        
+        <a href="https://github.com/HaDo1802" target="_blank" rel="noopener" class="timeline-image-link" aria-label="Visit Data Analytics Project website">
+          <img src="/assets/images/experience/A6A9367.webp" alt="Data Analytics Project" class="timeline-image" />
+        </a>
+        
+        <h3 class="timeline-company">Data Analytics Project</h3>
+        <h4 class="timeline-position">Independent Data Engineer</h4>
+        <p class="timeline-dates">2023 – 2023</p>
+        <p class="timeline-description">Designed and implemented end-to-end data pipelines with dbt, Airflow, and PostgreSQL for real-world datasets. Built production-grade observability and monitoring solutions.</p>
+        
+        <div class="timeline-skills">
+          
+          <span class="timeline-skill">dbt</span>
+          
+          <span class="timeline-skill">Airflow</span>
+          
+          <span class="timeline-skill">PostgreSQL</span>
+          
+          <span class="timeline-skill">Linux</span>
+          
+          <span class="timeline-skill">Python</span>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-marker"></div>
+      <div class="timeline-content">
+        
+        <img src="/assets/images/experience/1661597439044.jpeg" alt="Technical Training &amp; Development" class="timeline-image" />
+        
+        <h3 class="timeline-company">Technical Training &amp; Development</h3>
+        <h4 class="timeline-position">Data Engineer (Self-Directed)</h4>
+        <p class="timeline-dates">2022 – 2023</p>
+        <p class="timeline-description">Completed intensive data engineering training, focusing on orchestration, storage systems, transformations, and best practices in production data systems.</p>
+        
+        <div class="timeline-skills">
+          
+          <span class="timeline-skill">Data Architecture</span>
+          
+          <span class="timeline-skill">System Design</span>
+          
+          <span class="timeline-skill">Linux</span>
+          
+          <span class="timeline-skill">Docker</span>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ===================== Projects ===================== -->
+<section id="projects" class="section">
+  <div class="section-header">
+    <h2>🚀 Projects</h2>
+    <a class="view-all" href="https://github.com/HaDo1802" target="_blank" rel="noopener">All repos →</a>
+  </div>
+
+
+
+
+<div class="carousel">
+<button class="scroll-btn left" data-target="#projects-track" aria-label="Scroll projects left">‹</button>
+<div id="projects-track" class="carousel-track" role="region" aria-label="Projects list">
+
+<article class="card">
+<a class="thumb" href="https://github.com/MichaelShoemaker/history_of_rome_podcast_llm" target="_blank" rel="noopener" aria-label="Open project">
+<img src="/assets/images/HistoryOfRomeDataFlowDiagram.gif" alt="History of Rome Podcast LLM Search. thumbnail" loading="lazy" data-preview="/assets/images/HORDemo.gif" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://github.com/MichaelShoemaker/history_of_rome_podcast_llm" target="_blank" rel="noopener">History of Rome Podcast LLM Search.</a></h3>
+<p class="card-text">Download and transcribe all epiodes of the History of Rome and load them to Ollama LLM</p>
+<p class="card-tags">Docker Compose · Ollama ·  qdrant</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/HistoryOfRomeDataFlowDiagram.gif">Preview</a>
+<a class="btn" href="https://github.com/MichaelShoemaker/history_of_rome_podcast_llm" target="_blank" rel="noopener">Open</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://github.com/MichaelShoemaker/shoemaker-de-zoomcamp-final-project" target="_blank" rel="noopener" aria-label="Open project">
+<img src="/assets/images/DivvyDataDiagram.jpeg" alt="Divvy Bike Rental Data Pipeline. thumbnail" loading="lazy" data-preview="/assets/images/DivvyDataDiagram.jpeg" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://github.com/MichaelShoemaker/shoemaker-de-zoomcamp-final-project" target="_blank" rel="noopener">Divvy Bike Rental Data Pipeline.</a></h3>
+<p class="card-text">Data Enginnering Zoomcamp Final Project 2022</p>
+<p class="card-tags">Big Query · Airflow ·  dbt</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/DivvyDataDiagram.jpeg">Preview</a>
+<a class="btn" href="https://github.com/MichaelShoemaker/shoemaker-de-zoomcamp-final-project" target="_blank" rel="noopener">Open</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://github.com/MichaelShoemaker/Terraform-Docker-Airflow-GCP" target="_blank" rel="noopener" aria-label="Open project">
+<img src="/assets/images/TerraformDockerAirflow.png" alt="Airflow in Docker on GCP setup with Terraform thumbnail" loading="lazy" data-preview="/assets/images/TerraformDockerAirflow.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://github.com/MichaelShoemaker/Terraform-Docker-Airflow-GCP" target="_blank" rel="noopener">Airflow in Docker on GCP setup with Terraform</a></h3>
+<p class="card-text">A mostly automated way to setup Airflow on a GCP VM with Terraform</p>
+<p class="card-tags">GCP · Docker · Terraform · Airflow</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/TerraformDockerAirflow.png">Preview</a>
+<a class="btn" href="https://github.com/MichaelShoemaker/Terraform-Docker-Airflow-GCP" target="_blank" rel="noopener">Open</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://github.com/MichaelShoemaker/weather_cloud_function_setup/tree/main?tab=readme-ov-file" target="_blank" rel="noopener" aria-label="Open project">
+<img src="/assets/images/dlt_weather_flow.gif" alt="Daily Weather Capture into Big Query using dlt thumbnail" loading="lazy" data-preview="/assets/images/dlt_weather_flow.gif" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://github.com/MichaelShoemaker/weather_cloud_function_setup/tree/main?tab=readme-ov-file" target="_blank" rel="noopener">Daily Weather Capture into Big Query using dlt</a></h3>
+<p class="card-text">Getting historic weather data costs money. Getting recent weather data is free. So why not capture it yourself and build up a dataset?</p>
+<p class="card-tags">GCP · Cloud Function · dlt · Python</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/dlt_weather_flow.gif">Preview</a>
+<a class="btn" href="https://github.com/MichaelShoemaker/weather_cloud_function_setup/tree/main?tab=readme-ov-file" target="_blank" rel="noopener">Open</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://github.com/MichaelShoemaker/PlaylistGuide-LLM" target="_blank" rel="noopener" aria-label="Open project">
+<img src="/assets/images/PlayListGuideLLM.gif" alt="YouTube Semantic Search thumbnail" loading="lazy" data-preview="/assets/images/PlayListGuideLLM.gif" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://github.com/MichaelShoemaker/PlaylistGuide-LLM" target="_blank" rel="noopener">YouTube Semantic Search</a></h3>
+<p class="card-text">Ask questions across a YouTube playlist; returns time-coded hits with RAG.</p>
+<p class="card-tags">OpenSearch · LLM · Streamlit · Docker</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/PlayListGuideLLM.gif">Preview</a>
+<a class="btn" href="https://github.com/MichaelShoemaker/PlaylistGuide-LLM" target="_blank" rel="noopener">Open</a>
+</div>
+</div>
+</article>
+
+</div>
+<button class="scroll-btn right" data-target="#projects-track" aria-label="Scroll projects right">›</button>
+</div>
+
+
+</section>
+
+<!-- ===================== Videos ===================== -->
+<section id="videos" class="section">
+  <div class="section-header">
+    <h2>🎥 Videos</h2>
+    <a class="view-all" href="https://youtube.com/" target="_blank" rel="noopener">Channel →</a>
+  </div>
+
+
+
+
+<div class="carousel">
+<button class="scroll-btn left" data-target="#videos-track" aria-label="Scroll videos left">‹</button>
+<div id="videos-track" class="carousel-track" role="region" aria-label="Videos list">
+
+<article class="card">
+<a class="thumb" href="https://youtu.be/GMMZAddRxs8" target="_blank" rel="noopener" aria-label="Open video">
+<img src="/assets/images/tesseract.png" alt="How to Install Tesseract OCR on Windows and use it with Python thumbnail" loading="lazy" data-preview="/assets/images/tesseract.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://youtu.be/GMMZAddRxs8" target="_blank" rel="noopener">How to Install Tesseract OCR on Windows and use it with Python</a></h3>
+<p class="card-text">Quick walkthrough for setting up Tessaract OCR on Windows</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/video_semantic_demo_full.png">Preview</a>
+<a class="btn" href="https://youtu.be/GMMZAddRxs8" target="_blank" rel="noopener">Watch</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://youtu.be/g2TDfWDgwkE" target="_blank" rel="noopener" aria-label="Open video">
+<img src="/assets/images/PythonExternallyManagedError.png" alt="Removing Warning from Python 3.12+ for pip installs thumbnail" loading="lazy" data-preview="/assets/images/PythonExternallyManagedError.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://youtu.be/g2TDfWDgwkE" target="_blank" rel="noopener">Removing Warning from Python 3.12+ for pip installs</a></h3>
+<p class="card-text">Get rid of rule to not install packages system wide in Python Version &gt;=3.12</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/PythonExternallyManagedError.png">Preview</a>
+<a class="btn" href="https://youtu.be/g2TDfWDgwkE" target="_blank" rel="noopener">Watch</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://youtu.be/thXjZvKdmu8" target="_blank" rel="noopener" aria-label="Open video">
+<img src="/assets/images/RaspberryPiMount.png" alt="Mounting an External Hard Drive in a Raspberry Pi thumbnail" loading="lazy" data-preview="/assets/images/RaspberryPiMount.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://youtu.be/thXjZvKdmu8" target="_blank" rel="noopener">Mounting an External Hard Drive in a Raspberry Pi</a></h3>
+<p class="card-text">This is fun and allows you to make a Raspberry Pi with HUGE storage</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/RaspberryPiMount.png">Preview</a>
+<a class="btn" href="https://youtu.be/thXjZvKdmu8" target="_blank" rel="noopener">Watch</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://youtu.be/fBYY08Zp9LQ" target="_blank" rel="noopener" aria-label="Open video">
+<img src="/assets/images/DataFlowDiagram.png" alt="Create a Dataflow Diagram with Draw.io thumbnail" loading="lazy" data-preview="/assets/images/DataFlowDiagram.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://youtu.be/fBYY08Zp9LQ" target="_blank" rel="noopener">Create a Dataflow Diagram with Draw.io</a></h3>
+<p class="card-text">People like shiny things. To make your project "pop", here is a quick walkthrough for how to create an animated dataflow diagram with draw.io</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/DataFlowDiagram.png">Preview</a>
+<a class="btn" href="https://youtu.be/fBYY08Zp9LQ" target="_blank" rel="noopener">Watch</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://youtu.be/nzUYsKlsHF4" target="_blank" rel="noopener" aria-label="Open video">
+<img src="/assets/images/WeatherCapture_dlt.png" alt="Capture Daily Weather with dlt and Big Query thumbnail" loading="lazy" data-preview="/assets/images/WeatherCapture_dlt.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://youtu.be/nzUYsKlsHF4" target="_blank" rel="noopener">Capture Daily Weather with dlt and Big Query</a></h3>
+<p class="card-text">Getting historic weather data costs money. Getting recent weather data is free. So why not capture it yourself and build up a dataset?</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/WeatherCapture_dlt.png">Preview</a>
+<a class="btn" href="https://youtu.be/nzUYsKlsHF4" target="_blank" rel="noopener">Watch</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://youtu.be/LfNuNtgsV0s" target="_blank" rel="noopener" aria-label="Open video">
+<img src="/assets/images/ChicagoCrimedlt.png" alt="Pulling Chicago Crime Data into Duckdb with dlt thumbnail" loading="lazy" data-preview="/assets/images/ChicagoCrimedlt.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://youtu.be/LfNuNtgsV0s" target="_blank" rel="noopener">Pulling Chicago Crime Data into Duckdb with dlt</a></h3>
+<p class="card-text">dlt is a great way to quickly pull data from a Socrata API. Here is a quick walkthrough of how to do just that using the Chicago Crime Dataset</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/ChicagoCrimedlt.png">Preview</a>
+<a class="btn" href="https://youtu.be/LfNuNtgsV0s" target="_blank" rel="noopener">Watch</a>
+</div>
+</div>
+</article>
+
+</div>
+<button class="scroll-btn right" data-target="#videos-track" aria-label="Scroll videos right">›</button>
+</div>
+
+
+</section>
+
+<!-- ===================== Articles ===================== -->
+<section id="articles" class="section">
+  <div class="section-header">
+    <h2>✍️ Articles</h2>
+    <a class="view-all" href="https://medium.com/@" target="_blank" rel="noopener">Medium →</a>
+  </div>
+
+
+
+
+<div class="carousel">
+<button class="scroll-btn left" data-target="#articles-track" aria-label="Scroll articles left">‹</button>
+<div id="articles-track" class="carousel-track" role="region" aria-label="Articles list">
+
+<article class="card">
+<a class="thumb" href="https://medium.com/@dataslinger/check-for-bios-update-with-python-on-linux-mint-7a0c9e5ccbbc" target="_blank" rel="noopener" aria-label="Open article">
+<img src="/assets/images/CheckForBiosUpdate.png" alt="Check for BIOS Update with Python on Linux Mint thumbnail" loading="lazy" data-preview="/assets/images/CheckForBiosUpdate.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://medium.com/@dataslinger/check-for-bios-update-with-python-on-linux-mint-7a0c9e5ccbbc" target="_blank" rel="noopener">Check for BIOS Update with Python on Linux Mint</a></h3>
+<p class="card-text">Running a custom PC Build running Linux usually doesn't have a great utility to auto check for Bios Updates. Let's make our own. :-)</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/CheckForBiosUpdate.png">Preview</a>
+<a class="btn" href="https://medium.com/@dataslinger/check-for-bios-update-with-python-on-linux-mint-7a0c9e5ccbbc" target="_blank" rel="noopener">Read</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://medium.com/@dataslinger/setting-up-remote-postgresql-on-raspberry-pi-f9058b415768" target="_blank" rel="noopener" aria-label="Open article">
+<img src="/assets/images/RemotePostgres.png" alt="Set up Remote PostgreSQL on Raspberry Pi thumbnail" loading="lazy" data-preview="/assets/images/RemotePostgres.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://medium.com/@dataslinger/setting-up-remote-postgresql-on-raspberry-pi-f9058b415768" target="_blank" rel="noopener">Set up Remote PostgreSQL on Raspberry Pi</a></h3>
+<p class="card-text">Great way to learn Linux, SSH AND have a remote Postgres Instance to Play with</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/RemotePostgres.png">Preview</a>
+<a class="btn" href="https://medium.com/@dataslinger/setting-up-remote-postgresql-on-raspberry-pi-f9058b415768" target="_blank" rel="noopener">Read</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://medium.com/@dataslinger/how-to-pull-chicago-crime-data-with-sodapy-5eac61c36b1" target="_blank" rel="noopener" aria-label="Open article">
+<img src="/assets/images/ChicagoDataPortal.png" alt="Pulling Data from the Chicago Data Portal with Sodapy thumbnail" loading="lazy" data-preview="/assets/images/ChicagoDataPortal.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://medium.com/@dataslinger/how-to-pull-chicago-crime-data-with-sodapy-5eac61c36b1" target="_blank" rel="noopener">Pulling Data from the Chicago Data Portal with Sodapy</a></h3>
+<p class="card-text">The Chicago Data Portal has a bunch of great data, but pulling it from the API can be a bit of a pain.</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/ChicagoDataPortal.png">Preview</a>
+<a class="btn" href="https://medium.com/@dataslinger/how-to-pull-chicago-crime-data-with-sodapy-5eac61c36b1" target="_blank" rel="noopener">Read</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://medium.com/@dataslinger/quick-setup-of-flights-data-to-learn-sql-c1a89a49b0ec" target="_blank" rel="noopener" aria-label="Open article">
+<img src="/assets/images/FlightData.jpg" alt="Quick Setup of Flights Data to Learn SQL thumbnail" loading="lazy" data-preview="/assets/images/FlightData.jpg" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://medium.com/@dataslinger/quick-setup-of-flights-data-to-learn-sql-c1a89a49b0ec" target="_blank" rel="noopener">Quick Setup of Flights Data to Learn SQL</a></h3>
+<p class="card-text">This article is a quick tutorial for how to setup and get going with the Kaggle 2015 Flight Delays and Cancellations Data.</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/FlightData.jpg">Preview</a>
+<a class="btn" href="https://medium.com/@dataslinger/quick-setup-of-flights-data-to-learn-sql-c1a89a49b0ec" target="_blank" rel="noopener">Read</a>
+</div>
+</div>
+</article>
+
+<article class="card">
+<a class="thumb" href="https://medium.com/@dataslinger/setting-up-docker-on-linux-mint-20-x-a27e8d1983e6" target="_blank" rel="noopener" aria-label="Open article">
+<img src="/assets/images/MintDocker.png" alt="Setup Docker on Linux Mint 20.X thumbnail" loading="lazy" data-preview="/assets/images/MintDocker.png" />
+</a>
+<div class="card-body">
+<h3 class="card-title"><a href="https://medium.com/@dataslinger/setting-up-docker-on-linux-mint-20-x-a27e8d1983e6" target="_blank" rel="noopener">Setup Docker on Linux Mint 20.X</a></h3>
+<p class="card-text">Linux Mint is AWESOME. BUT it is also build on top of Ubuntu which can make installng things like Docker a bit tricky using the typical commands. Use this Article to get up and going quickly.</p>
+<div class="card-actions">
+<a href="#" class="btn ghost" data-lightbox-src="/assets/images/MintDocker.png">Preview</a>
+<a class="btn" href="https://medium.com/@dataslinger/setting-up-docker-on-linux-mint-20-x-a27e8d1983e6" target="_blank" rel="noopener">Read</a>
+</div>
+</div>
+</article>
+
+</div>
+<button class="scroll-btn right" data-target="#articles-track" aria-label="Scroll articles right">›</button>
+</div>
+
+
+</section>
+
+<!-- Tiny helper script for arrow buttons -->
+<script>
+(function () {
+  function init(btn) {
+    var targetSel = btn.getAttribute('data-target');
+    var track = document.querySelector(targetSel);
+    if (!track) return;
+    var step = Math.max(300, Math.floor(track.clientWidth * 0.9));
+
+    btn.addEventListener('click', function () {
+      track.scrollBy({ left: btn.classList.contains('left') ? -step : step, behavior: 'smooth' });
+    });
+
+    function update() {
+      var max = track.scrollWidth - track.clientWidth - 1;
+      var x = track.scrollLeft;
+      var leftBtn = track.parentElement.querySelector('.scroll-btn.left');
+      var rightBtn = track.parentElement.querySelector('.scroll-btn.right');
+      if (leftBtn) leftBtn.disabled = x <= 0;
+      if (rightBtn) rightBtn.disabled = x >= max;
+    }
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+  document.querySelectorAll('.scroll-btn').forEach(init);
+})();
+</script>
+
+
+    </main>
+    <footer class="site-footer">
+      <p>© 2025 Ha Do</p>
+    </footer>
+    <script>
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const href = a.getAttribute('href');
+          if (href.length > 1) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+      // Preview swap on hover if data-preview exists
+      document.addEventListener('mouseover', function(e){
+        const img = e.target.closest('img[data-preview]');
+        if(!img) return;
+        img.dataset.still = img.dataset.still || img.src;
+        img.src = img.getAttribute('data-preview');
+      });
+      document.addEventListener('mouseout', function(e){
+        const img = e.target.closest('img[data-preview]');
+        if(!img || !img.dataset.still) return;
+        img.src = img.dataset.still;
+      });
+      // Simple lightbox
+      const lb = document.createElement('div');
+      lb.className = 'lightbox hidden';
+      lb.innerHTML = '<div class="lb-backdrop"></div><img class="lb-img" alt=""><button class="lb-close" aria-label="Close">×</button>';
+      document.body.appendChild(lb);
+      const lbImg = lb.querySelector('.lb-img');
+      const close = () => lb.classList.add('hidden');
+      lb.querySelector('.lb-backdrop').addEventListener('click', close);
+      lb.querySelector('.lb-close').addEventListener('click', close);
+      document.addEventListener('click', function(e){
+        const a = e.target.closest('[data-lightbox-src]');
+        if(!a) return;
+        e.preventDefault();
+        lbImg.src = a.getAttribute('data-lightbox-src');
+        lb.classList.remove('hidden');
+      });
+    </script>
+  </body>
+</html>

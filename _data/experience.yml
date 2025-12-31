@@ -1,0 +1,38 @@
+- company: "Allegiant Air"
+  position: "Associate Data Analyst"
+  start_date: "2024"
+  end_date: "Present"
+  location: "Las Vegas, NV"
+  description: "Building data analytics solutions and dashboards to support operational decisions across the airline."
+  image: "/assets/images/experience/SWA-LEAD-001-scaled.jpg"
+  company_link: "https://www.allegiantair.com"
+  skills: ["Python", "SQL", "Data Analysis", "Dashboard Development"]
+
+- company: "Southwest Airlines"
+  position: "Data Engineering Intern"
+  start_date: "2023"
+  end_date: "2024"
+  location: "Dallas, TX"
+  description: "Developed ETL pipelines and data infrastructure using Apache Airflow, Docker, and cloud technologies to support analytics operations."
+  image: "/assets/images/experience/TKNTQ77S3JHFRHS3K52GY7W6JA.jpeg"
+  company_link: "https://www.southwest.com"
+  skills: ["Airflow", "Docker", "Python", "SQL", "AWS"]
+
+- company: "Data Analytics Project"
+  position: "Independent Data Engineer"
+  start_date: "2023"
+  end_date: "2023"
+  location: "Remote"
+  description: "Designed and implemented end-to-end data pipelines with dbt, Airflow, and PostgreSQL for real-world datasets. Built production-grade observability and monitoring solutions."
+  image: "/assets/images/experience/A6A9367.webp"
+  company_link: "https://github.com/HaDo1802"
+  skills: ["dbt", "Airflow", "PostgreSQL", "Linux", "Python"]
+
+- company: "Technical Training & Development"
+  position: "Data Engineer (Self-Directed)"
+  start_date: "2022"
+  end_date: "2023"
+  location: "Remote"
+  description: "Completed intensive data engineering training, focusing on orchestration, storage systems, transformations, and best practices in production data systems."
+  image: "/assets/images/experience/1661597439044.jpeg"
+  skills: ["Data Architecture", "System Design", "Linux", "Docker"]

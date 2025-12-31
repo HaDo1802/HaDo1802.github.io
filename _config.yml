@@ -9,9 +9,7 @@ defaults:
   - scope: { path: "" }
     values:
       layout: default
-author: "Michael Shoemaker"
-github_username: "MichaelShoemaker"
-youtube_channel: "@dataslinger6379"
-medium_username: "dataslinger"
+author: "Ha Do"
+github_username: "HaDo1802"
 exclude:
   - "README.md"
